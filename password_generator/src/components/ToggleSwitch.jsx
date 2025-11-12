@@ -4,7 +4,7 @@ function ToggleSwitch({name, onChange}){
 
 
     return (
-            <label className="inline-flex items-center cursor-pointer">
+            <label className="inline-flex items-center cursor-pointer max-md:">
                 <input type="checkbox" value={name} className="sr-only peer" 
                     onClick = {onChange}
                 />

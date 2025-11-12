@@ -4,7 +4,7 @@ import generator from './assets/generator';
 
 
 export default function App(){
-    const [length, setlength] = useState(8)
+    const [length, setlength] = useState(12)
     const [numberIncluded, setNumberIncluded] = useState(false)
     const [characterIncluded, setCharacterIncluded] = useState (false)
     const [isCopied, setIsCopied] = useState(false)
@@ -19,7 +19,7 @@ export default function App(){
     return (
         <>
             <div className="min-h-screen bg-gray-900 flex items-start justify-center">
-                <div className='px-20 py-10 bg-gray-700 rounded-3xl w-250 mt-20'>
+                <div className='px-20 py-10 bg-gray-700 rounded-3xl w-250 mt-20 max-md:p-5 max-md:mx-2'>
                     <h1 className="text-gray-300 text-4xl font-medium text-center">Password Generator</h1>
                     <div className='rounded-2xl mt-8 mb-4 relative'>
                         <input className='bg-gray-100 outline-none text-xl rounded-3xl py-4 pl-4 w-full' 
@@ -33,7 +33,7 @@ export default function App(){
                             }}
                         >{isCopied? 'copied' : 'copy'}</button>
                     </div>
-                    <div className='text-gray-300 px-3 py-5 flex gap-10'>
+                    <div className='text-gray-300 px-3 py-5 flex gap-10  max-md:grid max-md:grid-cols-2 max-md:gap-5'>
                         <ToggleSwitch 
                             name="Include Numbers"
                             onChange = {() => setNumberIncluded(!numberIncluded)}
@@ -42,13 +42,13 @@ export default function App(){
                             name="Include Characters"
                             onChange = {() => setCharacterIncluded(!characterIncluded)}
                         />
-                        <div className='grow flex gap-2 justify-center items-center'>
+                        <div className='grow flex gap-2 justify-center items-center max-md:col-span-full'>
                             <label htmlFor="default-range" 
                                 className="text-m text-nowrap font-medium text-gray-300 dark:text-white">
                                     Length: {length}
                             </label>
                             <input id="default-range" 
-                                type="range" min="8" max="30" Value={length} 
+                                type="range" min="8" max="30" defaultValue="12" Value={length} 
                                 className="w-full h-3 bg-gray-200 rounded-lg appearance-none cursor-pointer dark:bg-gray-700" 
                                 onChange={(e) => setlength(e.target.value)}
                             />
